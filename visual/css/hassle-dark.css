@@ -1,0 +1,308 @@
+/* =Dark Styles
+----------------------------------------------- */
+body {
+
+  background:url('../img/theater_zach_lanoue.jpg');
+  color: #eee;
+}
+
+a {
+  color: #cf2e52;
+}
+
+a:visited {
+  color: #cf2e52;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #fff;
+}
+
+input[type="text"],
+textarea {
+  background: #191919;
+  color: #eee;
+  border: 1px solid #292929;
+  border-top: none;
+  box-shadow: inset 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+input[type="submit"], input[type="button"], input[type="reset"] {
+  background: #060723;
+  background: -webkit-linear-gradient(#323232 0%, #212121 100%);
+  background: -moz-linear-gradient(#323232 0%, #212121 100%);
+  background: -ms-linear-gradient(#323232 0%, #212121 100%);
+  background: -o-linear-gradient(#323232 0%, #212121 100%);
+  background: linear-gradient(#323232 0%, #212121 100%);
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+button:active, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active {
+  background: #212121;
+  background: -webkit-linear-gradient(#212121 0%, #323232 100%);
+  background: -moz-linear-gradient(#212121 0%, #323232 100%);
+  background: -ms-linear-gradient(#212121 0%, #323232 100%);
+  background: -o-linear-gradient(#212121 0%, #323232 100%);
+  background: linear-gradient(#212121 0%, #323232 100%);
+  border: none;
+  border-top: 2px solid black;
+}
+
+pre {
+  border: 1px solid #292929;
+  border-top: none;
+  box-shadow: inset 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+  background: #191919;
+}
+
+mark, ins {
+  background: #00877f;
+}
+
+/* =Header
+----------------------------------------------- */
+#masthead {
+
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.site-title a {
+  color: #cf2e52;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.site-title a:hover {
+ 
+  text-decoration: none;
+}
+
+/* =Menu
+----------------------------------------------- */
+.main-navigation {
+
+}
+
+.main-navigation li {
+
+}
+
+.main-navigation a {
+  color: #ddd;
+ 
+
+}
+
+.main-navigation li:last-of-type a {
+
+}
+
+.main-navigation li a:hover {
+  border-color: #000;
+  color: #cf2e52;
+}
+
+.main-navigation li:hover > a {
+  border-color: #000;
+
+
+}
+
+.main-navigation ul ul {
+  background: #292933;
+  top: 30px;
+  left: -1px;
+  border-top: 1px solid #222222;
+  border-left: 1px solid #222222;
+  border-right: 1px solid #222222;
+}
+
+.main-navigation ul ul li {
+  border-top: 1px solid #292933;
+}
+
+.main-navigation ul ul li a {
+  background: #292933;
+  border-bottom: 1px solid #363636;
+}
+
+.main-navigation ul ul li a:hover {
+  background: #292933;
+  border-color: #363636;
+}
+
+/* =Masonry Layout
+----------------------------------------------- */
+.masonry .entry-title a {
+  color: #fff;
+}
+
+.masonry footer.entry-meta a {
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
+}
+
+.masonry footer.entry-meta a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer.entry-meta .post-link a:hover {
+  color: #cf2e52;
+}
+
+/* =Content
+----------------------------------------------- */
+.hentry {
+  background: #292933;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.entry-header {
+  border-bottom: 1px solid #161616;
+}
+
+.entry-meta a {
+  color: #ddd;
+}
+
+.entry-content {
+  border-top: 1px solid #363636;
+  border-bottom: 1px solid #161616;
+}
+
+footer.entry-meta {
+  border-top: 1px solid #333333;
+}
+
+footer.entry-meta a {
+  color: #ccc;
+}
+
+footer.entry-meta a:hover {
+  color: #cf2e52;
+}
+
+/* =Archives
+----------------------------------------------- */
+.page-header {
+
+}
+
+/* =Post Navigation
+----------------------------------------------- */
+#nav-below {
+  border: 1px solid #292933;
+  box-shadow: inset 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#nav-below a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+#nav-below a:hover {
+  color: #cf2e52;
+}
+
+.page-links a {
+  background: #060723;
+  text-decoration: none;
+}
+
+/* =Asides
+----------------------------------------------- */
+#secondary .widget {
+  background: #292933;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+#secondary .widget-title {
+  border-bottom: 1px solid #363636;
+}
+
+#secondary .widget-title:after {
+  border-bottom: 1px solid #161616;
+}
+
+/* =Media
+----------------------------------------------- */
+.wp-caption {
+  background: #212121;
+  border: 1px solid #333333;
+}
+
+/* =Comments
+----------------------------------------------- */
+#comments {
+  border: 1px solid #292933;
+  border-top: none;
+  box-shadow: inset 0px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+#comments a {
+  color: #ddd;
+}
+
+#comments a:hover {
+  color: #cf2e52;
+}
+
+.commentlist:after {
+  background: #191919;
+  border-bottom: 1px solid #363636;
+}
+
+article.comment {
+  background: #292933;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.commentlist .avatar {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+}
+
+#respond .form-allowed-tags {
+  color: #ccc;
+}
+
+/* =Footer
+----------------------------------------------- */
+#colophon {
+
+  border-top: 1px solid #212121;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+#colophon a {
+  color: #ddd;
+}
+
+/* =Responsive
+----------------------------------------------- */
+@media screen and (max-width: 790px) {
+  .main-navigation .menu {
+    border-top: 1px solid #161616;
+  }
+
+  .main-navigation .menu li:last-child {
+    border-right: 1px solid #161616;
+  }
+}
+@media screen and (max-width: 490px) {
+  .menu-toggle {
+    border-left: 1px solid #161616;
+  }
+
+  .menu-toggle a:hover {
+    border-color: #000;
+    background: #000;
+    color: #cf2e52;
+  }
+}
+

@@ -1,0 +1,12997 @@
+/*
+
+
+
+
+
+
+
+Theme Name: Visual
+
+
+
+
+
+
+
+Theme URI: http://wptheming.com/2013/03/visual-theme/
+
+
+
+
+
+
+
+Author: Devin Price
+
+
+
+
+
+
+
+Author URI: http://wptheming.com
+
+
+
+
+
+
+
+Description: Visual is a well-crafted responsive theme designed to showcase images, artwork and photgraphy in a smart grid layout.  Alternative styles (both light and dark) are available to select in the options panel.  An icon font ensures crisp display on retina devices and quick load times.  It's simple for new users to set up.  Developers can easily extend the code in a child theme.  For more information and a theme demo, visit: http://wptheming.com/?p=5277.
+
+
+
+
+
+
+
+Version: 0.4
+
+
+
+
+
+
+
+License: GNU General Public License
+
+
+
+
+
+
+
+License URI: license.txt
+
+
+
+
+
+
+
+Tags: flexible-width, featured-images, post-formats, translation-ready, photoblogging, theme-options, dark, light
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This theme, like WordPress, is licensed under the GPL.
+
+
+
+
+
+
+
+Have fun customizing it and sharing your work with others!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Originally built off the _s theme:
+
+
+
+
+
+
+
+underscores.me
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+/* =Icon Font
+
+
+
+
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+/* Included fonts are licensed SIL */
+
+
+
+
+
+
+
+/* See readme.txt for more information */
+
+
+
+
+
+
+
+@font-face {
+
+
+
+
+
+
+
+  font-family: 'entypo-custom';
+
+
+
+
+
+
+
+  src: url("fonts/entypo-custom.eot?01");
+
+
+
+
+
+
+
+  src: url("fonts/entypo-custom.eot?01#iefix") format("embedded-opentype"), url("fonts/entypo-custom.woff?01") format("woff"), url("fonts/entypo-custom.ttf?01") format("truetype"), url("fonts/entypo-custom.svg?01#entypo-custom") format("svg");
+
+
+
+
+
+
+
+  font-weight: normal;
+
+
+
+
+
+
+
+  font-style: normal;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[class^="icon-"]:before,
+
+
+
+
+
+
+
+[class*=" icon-"]:before {
+
+
+
+
+
+
+
+  font-size: 18px;
+
+
+
+
+
+
+
+  font-size: 1.8rem;
+
+
+
+
+
+
+
+  margin-right: 8px;
+
+
+
+
+
+
+
+  font-family: 'entypo-custom';
+
+
+
+
+
+
+
+  font-style: normal;
+
+
+
+
+
+
+
+  font-weight: normal;
+
+
+
+
+
+
+
+  speak: none;
+
+
+
+
+
+
+
+  display: inline-block;
+
+
+
+
+
+
+
+  text-decoration: inherit;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.icon-menu:before {
+
+
+
+
+
+
+
+  content: '\2630';
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.icon-comment:before {
+
+
+
+
+
+
+
+  content: '\e720';
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.icon-right-circled:before {
+
+
+
+
+
+
+
+  content: '\f0a9';
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.icon-dropdown:before {
+
+
+
+
+
+
+
+  content: '\e760';
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.icon-search:before {
+
+
+
+
+
+
+
+  content: '\1f50d';
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+
+
+
+
+
+
+
+	font-family: 'Conv_THURSTON_erc_002';
+
+
+
+
+
+
+
+	src: url('fonts/THURSTON_erc_002.eot');
+
+
+
+
+
+
+
+	src: local('☺'), url('fonts/THURSTON_erc_002.woff') format('woff'), url('fonts/THURSTON_erc_002.ttf') format('truetype'), url('fonts/THURSTON_erc_002.svg') format('svg');
+
+
+
+
+
+
+
+	font-weight: normal;
+
+
+
+
+
+
+
+	font-style: normal;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Reset
+
+
+
+
+
+
+
+-------------------------------------------------------------- */
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Resetting and rebuilding styles have been helped along thanks to the fine work of
+
+
+
+
+
+
+
+Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+
+
+
+
+
+
+
+along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+
+
+
+
+
+
+
+and Blueprint http://www.blueprintcss.org/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+html, body, div, span, applet, object, iframe,
+
+
+
+
+
+
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+
+
+
+
+
+
+
+a, abbr, acronym, address, big, cite, code,
+
+
+
+
+
+
+
+del, dfn, em, font, ins, kbd, q, s, samp,
+
+
+
+
+
+
+
+small, strike, strong, sub, sup, tt, var,
+
+
+
+
+
+
+
+dl, dt, dd, ol, ul, li,
+
+
+
+
+
+
+
+fieldset, form, label, legend,
+
+
+
+
+
+
+
+table, caption, tbody, tfoot, thead, tr, th, td {
+
+
+
+
+
+
+
+  border: 0;
+
+
+
+
+
+
+
+  font-family: inherit;
+
+
+
+
+
+
+
+  font-size: 100%;
+
+
+
+
+
+
+
+  font-style: inherit;
+
+
+
+
+
+
+
+  font-weight: inherit;
+
+
+
+
+
+
+
+  margin: 0;
+
+
+
+
+
+
+
+  outline: 0;
+
+
+
+
+
+
+
+  padding: 0;
+
+
+
+
+
+
+
+  vertical-align: baseline;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+html {
+
+
+
+
+
+
+
+  font-size: 62.5%;
+
+
+
+
+
+
+
+  /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+
+
+
+
+
+
+
+  overflow-y: scroll;
+
+
+
+
+
+
+
+  /* Keeps page centred in all browsers regardless of content height */
+
+
+
+
+
+
+
+  -webkit-text-size-adjust: 100%;
+
+
+
+
+
+
+
+  /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+
+
+
+
+
+
+
+  -ms-text-size-adjust: 100%;
+
+
+
+
+
+
+
+  /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+
+  background:#000;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ol, ul {
+
+
+
+
+
+
+
+  list-style: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+table {
+
+
+
+
+
+
+
+  /* tables still need 'cellspacing="0"' in the markup */
+
+
+
+
+
+
+
+  border-collapse: separate;
+
+
+
+
+
+
+
+  border-spacing: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+caption, th, td {
+
+
+
+
+
+
+
+  font-weight: normal;
+
+
+
+
+
+
+
+  text-align: left;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+blockquote:before, blockquote:after,
+
+
+
+
+
+
+
+q:before, q:after {
+
+
+
+
+
+
+
+  content: "";
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+blockquote, q {
+
+
+
+
+
+
+
+  quotes: "" "";
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a:focus {
+
+
+
+
+
+
+
+  outline: thin dotted;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a:hover,
+
+
+
+
+
+
+
+a:active {
+
+
+
+
+
+
+
+  /* Improves readability when focused and also mouse hovered in all browsers people.opera.com/patrickl/experiments/keyboard/test */
+
+
+
+
+
+
+
+  outline: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a img {
+
+
+
+
+
+
+
+  border: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Global
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+/* Headings */
+
+
+
+
+
+
+
+h1, h2, h3, h4, h5, h6 {
+
+
+
+
+
+
+
+  clear: both;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hr {
+
+
+
+
+
+
+
+  background-color: #ccc;
+
+
+
+
+
+
+
+  border: 0;
+
+
+
+
+
+
+
+  height: 1px;
+
+
+
+
+
+
+
+  margin-bottom: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Text elements */
+
+
+
+
+
+
+
+p {
+
+
+
+
+
+
+
+  margin-bottom: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul, ol {
+
+
+
+
+
+
+
+  margin: 0 0 15px 3em;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul {
+
+
+
+
+
+
+
+  list-style: disc;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ol {
+
+
+
+
+
+
+
+  list-style: decimal;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ul ul, ol ol, ul ol, ol ul {
+
+
+
+
+
+
+
+  margin-bottom: 0;
+
+
+
+
+
+
+
+  margin-left: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dt {
+
+
+
+
+
+
+
+  font-weight: bold;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dd {
+
+
+
+
+
+
+
+  margin: 0 15px 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+b, strong {
+
+
+
+
+
+
+
+  font-weight: bold;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dfn, cite, em, i {
+
+
+
+
+
+
+
+  font-style: italic;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+blockquote {
+
+
+
+
+
+
+
+  margin: 0 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+address {
+
+
+
+
+
+
+
+  margin: 0 0 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pre {
+
+
+
+
+
+
+
+  font-family: "Courier 10 Pitch", Courier, monospace;
+
+
+
+
+
+
+
+  font-size: 14px;
+
+
+
+
+
+
+
+  font-size: 1.4rem;
+
+
+
+
+
+
+
+  padding: 15px;
+
+
+
+
+
+
+
+  overflow: auto;
+
+
+
+
+
+
+
+  max-width: 100%;
+
+
+
+
+
+
+
+  margin-bottom: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+code, kbd, tt, var {
+
+
+
+
+
+
+
+  font-family: "Courier 10 Pitch", Courier, monospace;
+
+
+
+
+
+
+
+  font-size: 14px;
+
+
+
+
+
+
+
+  font-size: 1.4rem;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+abbr, acronym {
+
+
+
+
+
+
+
+  border-bottom: 1px dotted #666666;
+
+
+
+
+
+
+
+  cursor: help;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mark, ins {
+
+
+
+
+
+
+
+  background: #faf8cb;
+
+
+
+
+
+
+
+  text-decoration: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sup,
+
+
+
+
+
+
+
+sub {
+
+
+
+
+
+
+
+  font-size: 75%;
+
+
+
+
+
+
+
+  height: 0;
+
+
+
+
+
+
+
+  line-height: 0;
+
+
+
+
+
+
+
+  position: relative;
+
+
+
+
+
+
+
+  vertical-align: baseline;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sup {
+
+
+
+
+
+
+
+  bottom: 1ex;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sub {
+
+
+
+
+
+
+
+  top: .5ex;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+small {
+
+
+
+
+
+
+
+  font-size: 75%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+big {
+
+
+
+
+
+
+
+  font-size: 125%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+figure {
+
+
+
+
+
+
+
+  margin: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+table {
+
+
+
+
+
+
+
+  margin: 0 0 15px;
+
+
+
+
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+th {
+
+
+
+
+
+
+
+  font-weight: bold;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button,
+
+
+
+
+
+
+
+input,
+
+
+
+
+
+
+
+select,
+
+
+
+
+
+
+
+textarea {
+
+
+
+
+
+
+
+  font-size: 100%;
+
+
+
+
+
+
+
+  /* Corrects font size not being inherited in all browsers */
+
+
+
+
+
+
+
+  margin: 0;
+
+
+
+
+
+
+
+  /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
+
+
+
+
+
+
+
+  vertical-align: baseline;
+
+
+
+
+
+
+
+  /* Improves appearance and consistency in all browsers */
+
+
+
+
+
+
+
+  *vertical-align: middle;
+
+
+
+
+
+
+
+  /* Improves appearance and consistency in all browsers */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input,
+
+
+
+
+
+
+
+textarea {
+
+
+
+
+
+
+
+  border: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button,
+
+
+
+
+
+
+
+input {
+
+
+
+
+
+
+
+  line-height: normal;
+
+
+
+
+
+
+
+  /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
+
+
+
+
+
+
+
+  *overflow: visible;
+
+
+
+
+
+
+
+  /* Corrects inner spacing displayed oddly in IE6/7 */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button,
+
+
+
+
+
+
+
+html input[type="button"],
+
+
+
+
+
+
+
+input[type="reset"],
+
+
+
+
+
+
+
+input[type="submit"] {
+
+
+
+
+
+
+
+  /* Styles */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button:hover,
+
+
+
+
+
+
+
+html input[type="button"]:hover,
+
+
+
+
+
+
+
+input[type="reset"]:hover,
+
+
+
+
+
+
+
+input[type="submit"]:hover {
+
+
+
+
+
+
+
+  /* Styles */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button:focus,
+
+
+
+
+
+
+
+html input[type="button"]:focus,
+
+
+
+
+
+
+
+input[type="reset"]:focus,
+
+
+
+
+
+
+
+input[type="submit"]:focus,
+
+
+
+
+
+
+
+button:active,
+
+
+
+
+
+
+
+html input[type="button"]:active,
+
+
+
+
+
+
+
+input[type="reset"]:active,
+
+
+
+
+
+
+
+input[type="submit"]:active {
+
+
+
+
+
+
+
+  /* Styles */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type="checkbox"],
+
+
+
+
+
+
+
+input[type="radio"] {
+
+
+
+
+
+
+
+  box-sizing: border-box;
+
+
+
+
+
+
+
+  /* Addresses box sizing set to content-box in IE8/9 */
+
+
+
+
+
+
+
+  padding: 0;
+
+
+
+
+
+
+
+  /* Addresses excess padding in IE8/9 */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type="search"] {
+
+
+
+
+
+
+
+  -webkit-appearance: textfield;
+
+
+
+
+
+
+
+  /* Addresses appearance set to searchfield in S5, Chrome */
+
+
+
+
+
+
+
+  -moz-box-sizing: content-box;
+
+
+
+
+
+
+
+  -webkit-box-sizing: content-box;
+
+
+
+
+
+
+
+  /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
+
+
+
+
+
+
+
+  box-sizing: content-box;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type="search"]::-webkit-search-decoration {
+
+
+
+
+
+
+
+  /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
+
+
+
+
+
+
+
+  -webkit-appearance: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button::-moz-focus-inner,
+
+
+
+
+
+
+
+input::-moz-focus-inner {
+
+
+
+
+
+
+
+  /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+
+
+
+
+
+
+
+  border: 0;
+
+
+
+
+
+
+
+  padding: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type=text],
+
+
+
+
+
+
+
+input[type=email],
+
+
+
+
+
+
+
+input[type=password],
+
+
+
+
+
+
+
+textarea {
+
+
+
+
+
+
+
+  /* Styles */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type=text]:focus,
+
+
+
+
+
+
+
+input[type=email]:focus,
+
+
+
+
+
+
+
+input[type=password]:focus,
+
+
+
+
+
+
+
+textarea:focus {
+
+
+
+
+
+
+
+  /* Styles */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type=text],
+
+
+
+
+
+
+
+input[type=email],
+
+
+
+
+
+
+
+input[type=password] {
+
+
+
+
+
+
+
+  padding: 5px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+textarea {
+
+
+
+
+
+
+
+  overflow: auto;
+
+
+
+
+
+
+
+  /* Removes default vertical scrollbar in IE6/7/8/9 */
+
+
+
+
+
+
+
+  vertical-align: top;
+
+
+
+
+
+
+
+  /* Improves readability and alignment in all browsers */
+
+
+
+
+
+
+
+  width: 98%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Alignment */
+
+
+
+
+
+
+
+.alignleft {
+
+
+
+
+
+
+
+  display: inline;
+
+
+
+
+
+
+
+  float: left;
+
+
+
+
+
+
+
+  margin-right: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.alignright {
+
+
+
+
+
+
+
+  display: inline;
+
+
+
+
+
+
+
+  float: right;
+
+
+
+
+
+
+
+  margin-left: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.aligncenter {
+
+
+
+
+
+
+
+  clear: both;
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  margin: 0 auto;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Text meant only for screen readers */
+
+
+
+
+
+
+
+.assistive-text {
+
+
+
+
+
+
+
+  clip: rect(1px 1px 1px 1px);
+
+
+
+
+
+
+
+  /* IE6, IE7 */
+
+
+
+
+
+
+
+  clip: rect(1px, 1px, 1px, 1px);
+
+
+
+
+
+
+
+  position: absolute !important;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Helper Classes */
+
+
+
+
+
+
+
+.ir {
+
+
+
+
+
+
+
+  background-color: transparent;
+
+
+
+
+
+
+
+  border: 0;
+
+
+
+
+
+
+
+  overflow: hidden;
+
+
+
+
+
+
+
+  *text-indent: -9999px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ir:before {
+
+
+
+
+
+
+
+  content: "";
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  width: 0;
+
+
+
+
+
+
+
+  height: 150%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hidden {
+
+
+
+
+
+
+
+  display: none !important;
+
+
+
+
+
+
+
+  visibility: hidden;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.visuallyhidden {
+
+
+
+
+
+
+
+  border: 0;
+
+
+
+
+
+
+
+  clip: rect(0 0 0 0);
+
+
+
+
+
+
+
+  height: 1px;
+
+
+
+
+
+
+
+  margin: -1px;
+
+
+
+
+
+
+
+  overflow: hidden;
+
+
+
+
+
+
+
+  padding: 0;
+
+
+
+
+
+
+
+  position: absolute;
+
+
+
+
+
+
+
+  width: 1px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.visuallyhidden.focusable:active,
+
+
+
+
+
+
+
+.visuallyhidden.focusable:focus {
+
+
+
+
+
+
+
+  clip: auto;
+
+
+
+
+
+
+
+  height: auto;
+
+
+
+
+
+
+
+  margin: 0;
+
+
+
+
+
+
+
+  overflow: visible;
+
+
+
+
+
+
+
+  position: static;
+
+
+
+
+
+
+
+  width: auto;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.invisible {
+
+
+
+
+
+
+
+  visibility: hidden;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.clearfix:before,
+
+
+
+
+
+
+
+.clearfix:after {
+
+
+
+
+
+
+
+  content: " ";
+
+
+
+
+
+
+
+  display: table;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.clearfix:after {
+
+
+
+
+
+
+
+  clear: both;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.clearfix {
+
+
+
+
+
+
+
+  *zoom: 1;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Elements
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+body,
+
+
+
+
+
+
+
+button,
+
+
+
+
+
+
+
+input,
+
+
+
+
+
+
+
+select,
+
+
+
+
+
+
+
+textarea {
+
+
+
+
+
+
+
+  font-family: "Raleway", sans-serif;
+
+
+
+
+
+
+
+  font-weight: 400;
+
+
+
+
+
+
+
+  font-size: 14px;
+
+
+
+
+
+
+
+  font-size: 1.4rem;
+
+
+
+
+
+
+
+  line-height: 1.5;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+body {
+
+
+
+
+
+
+
+  background: #f5f5f5;
+
+
+
+
+
+
+
+  color: #333;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fontheader{
+
+
+
+
+
+
+
+font-family: 'Conv_THURSTON_erc_002',Sans-Serif;
+
+
+
+
+
+
+
+text-transform:uppercase;
+
+
+
+
+
+
+
+font-size: 35px;
+
+
+
+
+
+
+
+font-size: 3.5rem;
+
+
+
+
+
+
+
+line-height:16px;
+
+
+
+
+
+
+
+margin:0 0 10px 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a {
+
+
+
+
+
+
+
+  color: #449ccc;
+
+
+
+
+
+
+
+  text-decoration: none;
+
+
+
+
+
+
+
+  -webkit-transition: color 0.2s ease-out;
+
+
+
+
+
+
+
+  -moz-transition: color 0.2s ease-out;
+
+
+
+
+
+
+
+  -ms-transition: color 0.2s ease-out;
+
+
+
+
+
+
+
+  -o-transition: color 0.2s ease-out;
+
+
+
+
+
+
+
+  transition: color 0.2s ease-out;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a:hover,
+
+
+
+
+
+
+
+a:focus,
+
+
+
+
+
+
+
+a:active {
+
+
+
+
+
+
+
+  text-decoration: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type="text"],
+
+
+
+
+
+
+
+textarea {
+
+
+
+
+
+
+
+  border: 1px solid #eeeeee;
+
+
+
+
+
+
+
+  padding: 5px;
+
+
+
+
+
+
+
+  border-radius: 3px;
+
+
+
+
+
+
+
+  outline: 0;
+
+
+
+
+
+
+
+  width:165px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input[type="submit"], input[type="button"], input[type="reset"] {
+
+
+
+
+
+
+
+  display: inline-block;
+
+
+
+
+
+
+
+  padding: 8px 24px 7px;
+
+
+
+
+
+
+
+  text-decoration: none;
+
+
+
+
+
+
+
+  border-radius: 3px;
+
+
+
+
+
+
+
+  cursor: pointer;
+
+
+
+
+
+
+
+  background: #eee;
+
+
+
+
+
+
+
+  color: #666;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button:active, input[type="submit"]:active, input[type="button"]:active, input[type="reset"]:active {
+
+
+
+
+
+
+
+  padding: 7px 24px 8px;
+
+
+
+
+
+
+
+  background: #ccc;
+
+
+
+
+
+
+
+  color: #333;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pre {
+
+
+
+
+
+
+
+  border-radius: 6px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Structure
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+.section {
+
+
+
+
+
+
+
+  margin: 0 auto;
+
+
+
+
+
+
+
+  max-width: 1020px;
+
+
+
+
+
+
+
+  padding: 10px 20px 20px 10px;
+
+
+
+
+
+
+
+  background-color:#161616;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#primary {
+
+
+
+
+
+
+
+  float: left;
+
+
+
+
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+  padding-right: 320px;
+
+
+
+
+
+
+
+  -webkit-box-sizing: border-box;
+
+
+
+
+
+
+
+  -moz-box-sizing: border-box;
+
+
+
+
+
+
+
+  box-sizing: border-box;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#primary-full-width {
+
+
+
+
+
+
+
+  float: left;
+
+
+
+
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+  -webkit-box-sizing: border-box;
+
+
+
+
+
+
+
+  -moz-box-sizing: border-box;
+
+
+
+
+
+
+
+  box-sizing: border-box;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Main index sidebar
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+#chosen-shows {
+
+
+
+
+
+
+
+display:inline-block;
+
+
+
+
+
+
+
+float:right;
+
+
+
+
+
+
+
+max-width:32%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+#frontBanner {
+
+
+
+
+
+
+
+	width: 98%;
+
+
+
+
+
+
+
+	margin: 20px 0px;
+
+
+
+	background: #292933;
+
+
+
+	padding: 10px;
+
+	
+
+	overflow: auto;
+
+
+
+
+
+
+
+}
+
+
+
+#frontBanner .textwidget{
+
+padding: 0 20px;
+
+font-size:30px;
+
+
+
+}
+
+
+
+#frontBanner .frontBanner-widget { 
+
+
+
+display: inline-block;
+
+clear: none;
+
+vertical-align: top;
+
+
+
+float:left;
+
+padding:0 10px;
+
+}
+
+
+
+#frontBanner .frontBanner-widget img{
+
+max-width:100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+#alert img{
+
+width: 200px;
+
+}
+
+
+
+#index-secondary {
+
+
+
+
+
+
+
+ width: 320px;
+
+
+
+
+
+
+
+ margin-left: 10px;
+
+
+
+
+
+
+
+ display: inline-block;
+
+
+
+
+
+
+
+ vertical-align: top;
+
+
+
+
+
+
+
+ height:350px;
+
+
+
+ 
+
+
+
+ overflow-y: scroll;
+
+
+
+ 
+
+
+
+}
+
+
+
+
+
+
+
+#index-secondary::-webkit-scrollbar { 
+
+
+
+    display: none; 
+
+
+
+}
+
+
+
+
+
+
+
+#sidebar-nav {
+
+
+
+
+
+
+
+ width: 310px;
+
+
+
+ 
+
+
+
+ padding: 3px 5px 3px 5px;
+
+
+
+
+
+
+
+ margin-left: 10px;
+
+
+
+ 
+
+
+
+ text-align: left;
+
+
+
+ 
+
+
+
+ background-color: #292933;
+
+
+
+ 
+
+
+
+ -webkit-touch-callout: none;
+
+
+
+-webkit-user-select: none;
+
+
+
+-khtml-user-select: none;
+
+
+
+-moz-user-select: moz-none;
+
+
+
+-ms-user-select: none;
+
+
+
+user-select: none;
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#sidebar-nav a {
+
+
+
+
+
+
+
+  color: #FFFFFF;
+
+
+
+  
+
+
+
+}
+
+
+
+
+
+
+
+.right-align {
+
+
+
+  float: right;
+
+
+
+}
+
+
+
+
+
+
+
+#scrollUp {
+
+
+
+	cursor: pointer;
+
+
+
+	margin-right: 15px;	
+
+
+
+}
+
+
+
+
+
+
+
+#scrollDown {
+
+
+
+	cursor: pointer;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gce-list {
+
+
+
+
+
+
+
+margin:0px;
+
+
+
+
+
+
+
+list-style:none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =calendar icon fix
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+.timely [class^="icon-"]:before, .timely [class*=" icon-"]:before {
+
+
+
+
+
+
+
+font-family: Timely_FontAwesome !important;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =other page sidebarz
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+#secondary {
+
+
+
+
+
+
+
+float: left;
+
+
+
+
+
+
+
+width: 300px;
+
+
+
+
+
+
+
+margin-left: -300px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =other page sidebarz
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+#footer-sidebar {
+
+display: block;
+
+float: left;
+
+position: relative;
+
+height:180px;
+
+width: 100%;
+
+}
+
+
+
+#text-4 {
+
+float: left;
+
+padding-left: 10px;	
+
+}
+
+
+
+#pages-2 {
+
+	display: block;
+
+	text-align: left;
+
+	position: relative;
+
+}
+
+
+
+#pages-2 ul {
+
+list-style: none;
+
+}
+
+
+
+#pages-2 ul li {
+
+float: left;
+
+padding-right: 8%;
+
+}
+
+
+
+#pages-2 ul.the_pages li:last-child {
+
+padding-right:0;
+
+}
+
+
+
+#pages-2 a:hover {
+
+	text-decoration: underline;
+
+}
+
+
+
+#search-2 {
+
+	display:block;
+
+	position: relative;
+
+	float: right;
+
+	margin: 0 2em;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* = edit to advanced recent post plugin. Must give li this class name if plugin gets updated!!!!
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+.advanced-recent {
+
+
+
+
+
+
+
+padding-bottom: 7px;
+
+
+
+
+
+
+
+margin-bottom:7px;
+
+
+
+
+
+
+
+border-bottom: 1px white solid;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Header
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+#masthead {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#masthead .section {
+
+
+
+
+
+
+
+  padding: 0 15px 20px 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#masthead hgroup {
+
+
+
+
+
+
+
+  margin-top: 12px;
+
+
+
+
+
+
+
+  float: left;
+
+
+
+
+
+
+
+  min-height: 48px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-title {
+
+
+
+
+
+
+
+  font-size: 86px;
+
+
+
+
+
+
+
+  font-size: 8.6rem;
+
+
+
+
+
+
+
+  line-height:46px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-title a {
+
+
+
+
+
+
+
+  letter-spacing: 1px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#banner {
+
+
+
+
+
+
+
+width:85%;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+#banner-strip {
+
+
+
+	position: relative;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#logo {
+
+
+
+
+
+
+
+  float: left;
+
+
+
+  width:15%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#logo img{
+
+
+
+
+
+
+
+width: 15%px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+#art-credit {
+
+
+
+	font-family: entypo-custom;
+
+
+
+	font-size: 14px;
+
+
+
+	vertical-align: bottom;
+
+
+
+	background-color: #161616;
+
+
+
+	color: #FFFFFF;
+
+
+
+	display: none;
+
+
+
+	position: absolute;
+
+
+
+	right: 0;
+
+
+
+	bottom: 0;
+
+
+
+	padding: 10px;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#nav-right {
+
+
+
+
+
+
+
+float:right;
+
+
+
+
+
+
+
+display: inline-block;
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#nav-right img{
+
+
+
+
+
+
+
+width: 120px;
+
+
+
+
+
+
+
+float: left;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#social {
+
+clear: both;
+
+display:block;
+
+float: right;
+
+margin: 1em 1em 0 0;
+
+padding: 0px 10px 10px 10px;
+
+position: relative;
+
+width: 140px;
+
+}
+
+
+
+
+
+#social img{
+
+margin-left:10px;
+
+width:40px;
+
+}
+
+
+
+
+
+#search-main {
+
+  float:right;
+
+  margin-top:5px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Menu
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+.main-navigation {
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  float: left;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation ul {
+
+
+
+
+
+
+
+  list-style: none;
+
+
+
+
+
+
+
+  margin: 0;
+
+
+
+
+
+
+
+  padding-left: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation li {
+
+
+
+
+
+
+
+  font-size: 11px;
+
+
+
+
+
+
+
+  font-size: 1.4rem;
+
+
+
+
+
+
+
+  letter-spacing: 1px;
+
+
+
+
+
+
+
+  text-transform: uppercase;
+
+
+
+
+
+
+
+  float: left;
+
+
+
+
+
+
+
+  position: relative;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation a {
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  text-decoration: none;
+
+
+
+
+
+
+
+  padding: 10px 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation li a:hover {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation li:hover > a {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation li.has-children a {
+
+
+
+
+
+
+
+  padding-right: 40px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation li.has-children > a:after {
+
+
+
+
+
+
+
+  content: '\e760';
+
+
+
+
+
+
+
+  font-family: 'entypo-custom';
+
+
+
+
+
+
+
+  font-size: 16px;
+
+
+
+
+
+
+
+  font-size: 1.6rem;
+
+
+
+
+
+
+
+  line-height: 1;
+
+
+
+
+
+
+
+  position: absolute;
+
+
+
+
+
+
+
+  right: 20px;
+
+
+
+
+
+
+
+  speak: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation ul ul {
+
+
+
+
+
+
+
+  display: none;
+
+
+
+
+
+
+
+  background: #e9e9e9;
+
+
+
+
+
+
+
+  position: absolute;
+
+
+
+
+
+
+
+  float: left;
+
+
+
+
+
+
+
+  margin: 0;
+
+
+
+
+
+
+
+  top: 30px;
+
+
+
+
+
+
+
+  left: 0;
+
+
+
+
+
+
+
+  width: 190px;
+
+
+
+
+
+
+
+  z-index: 99999;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation ul ul li {
+
+
+
+
+
+
+
+  border: none;
+
+
+
+
+
+
+
+  float: none;
+
+
+
+
+
+
+
+  border-top: 1px solid whitesmoke;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation ul ul li a {
+
+
+
+
+
+
+
+  border: none;
+
+
+
+
+
+
+
+  padding: 10px 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation ul ul li a:hover {
+
+
+
+
+
+
+
+  background: #ddd;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation ul ul li:last-of-type a {
+
+
+
+
+
+
+
+  border: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation ul li:hover > ul {
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Three level menus aren't really supported */
+
+
+
+
+
+
+
+.main-navigation ul ul ul {
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  position: relative;
+
+
+
+
+
+
+
+  float: none;
+
+
+
+
+
+
+
+  border-left: none;
+
+
+
+
+
+
+
+  border-right: none;
+
+
+
+
+
+
+
+  top: 0;
+
+
+
+
+
+
+
+  left: 0;
+
+
+
+
+
+
+
+  width: 190px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-navigation ul ul ul li:last-of-type {
+
+
+
+
+
+
+
+  border: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Small menu */
+
+
+
+
+
+
+
+.menu-toggle {
+
+
+
+
+
+
+
+  cursor: pointer;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-small-navigation .menu {
+
+
+
+
+
+
+
+  display: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =subnav menu
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu-subnav .menu-item  {
+
+
+
+
+
+
+
+display: inline-block;
+
+
+
+
+
+
+
+list-style: none;
+
+
+
+
+
+
+
+margin: 10px 10px 10px 10px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu-subnav{
+
+
+
+
+
+
+
+margin:0 !important;
+
+
+
+
+
+
+
+float:left;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu-subnav a{
+
+
+
+
+
+
+
+text-decoration:none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Top Shrimp Nav
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu-topshrimp .menu-item  {
+
+
+
+
+
+
+
+display: inline-block;
+
+
+
+
+
+
+
+list-style: none;
+
+
+
+
+
+
+
+height: 10px;
+
+
+
+
+
+
+
+margin: 10px 10px 10px 10px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu-topshrimp {
+
+
+
+
+
+
+
+margin:0 !important;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#menu-topshrimp a{
+
+
+
+
+
+
+
+text-decoration:none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =jquerySlider
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+#photo-rotator {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ width: 667px;
+
+
+
+ 
+
+
+
+ max-width:65%;
+
+
+
+
+
+
+
+ min-height:150px;
+
+
+
+
+
+
+
+ padding: 0px 15px 0px 0px;
+
+
+
+
+
+
+
+ position: relative;
+
+
+
+
+
+
+
+ color: #fff;
+
+
+
+
+
+
+
+ margin:0 0 20px 0;
+
+
+
+
+
+
+
+ display:inline-block;
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #photo-rotator .ui-tabs-panel {
+
+
+
+
+
+
+
+    list-style: none;
+
+
+
+
+
+
+
+    height: 334px;
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     #photo-rotator .ui-tabs-panel a.post-image {
+
+
+
+
+
+
+
+         display: block;
+
+
+
+
+
+
+
+         width: 667px;
+
+
+
+
+
+
+
+         height: 334px;
+
+
+
+
+
+
+
+         float: left;
+
+
+
+
+
+
+
+         margin: 10px 10px 0 10px;
+
+
+
+
+
+
+
+         background: #ccc;
+
+
+
+
+
+
+
+         position: relative;
+
+
+
+
+
+
+
+         text-decoration: none;
+
+
+
+
+
+
+
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+         #photo-rotator .ui-tabs-panel a.post-image .title {
+
+
+
+
+
+
+
+             display: block;
+
+
+
+
+
+
+
+             padding: 10px;
+
+
+
+
+
+
+
+             background: #000;
+
+
+
+
+
+
+
+             background: rgba(0,0,0,.5);
+
+
+
+
+
+
+
+             color: #ccc;
+
+
+
+
+
+
+
+             position: absolute;
+
+
+
+
+
+
+
+             bottom: 0px;
+
+
+
+
+
+
+
+             left: 0px;
+
+
+
+
+
+
+
+             font-size: 18px;
+
+
+
+
+
+
+
+             width: 650px;
+
+
+
+
+
+
+
+         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     .ui-tabs-hide {display: none !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #slide-nav {
+
+
+
+
+
+
+
+     width:690px;
+
+
+
+
+
+
+
+     padding: 0px;
+
+
+
+
+
+
+
+     margin: 0px;
+
+
+
+
+
+
+
+     position: relative;
+
+
+
+
+
+
+
+     float: left;
+
+
+
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #slide-nav li {
+
+
+
+
+
+
+
+     float: left;
+
+
+
+
+
+
+
+     list-style: none;
+
+
+
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #slide-nav a {
+
+
+
+
+
+
+
+     display: block;
+
+
+
+
+
+
+
+     color: #666;
+
+
+
+
+
+
+
+     float: left;
+
+
+
+
+
+
+
+     width: 150px;
+
+
+
+
+
+
+
+     padding: 5px 10px 10px 10px;
+
+
+
+
+
+
+
+     text-decoration: none;
+
+
+
+
+
+
+
+     background: url('img/post-line.png') no-repeat right top;
+
+
+
+
+
+
+
+     min-height: 100px;
+
+
+
+
+
+
+
+     font-size: 14px;
+
+
+
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #slide-nav li:last-child a {
+
+
+
+
+
+
+
+     background: none;
+
+
+
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ #slide-nav a:hover {
+
+
+
+
+
+
+
+     color: #FFF;
+
+
+
+
+
+
+
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     #slide-nav a .thumbnail {
+
+
+
+
+
+
+
+            display: block;
+
+
+
+
+
+
+
+            background: #cbc9c9;
+
+
+
+
+
+
+
+            padding: 3px;
+
+
+
+
+
+
+
+            border-bottom: solid #fff 1px;
+
+
+
+
+
+
+
+            width: 150px;
+
+
+
+
+
+
+
+            height: 75px;
+
+
+
+
+
+
+
+            filter: alpha(opacity=50);
+
+
+
+
+
+
+
+            -moz-opacity: .5;
+
+
+
+
+
+
+
+            opacity: .5;
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     #slide-nav .ui-tabs-selected a { color: #222 }
+
+
+
+
+
+
+
+     #slide-nav .ui-tabs-selected a .thumbnail {
+
+
+
+
+
+
+
+            background: #bbb;
+
+
+
+
+
+
+
+            filter: alpha(opacity=100);
+
+
+
+
+
+
+
+            -moz-opacity: 1;
+
+
+
+
+
+
+
+            opacity: 1;
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Browser Resets */
+
+
+
+
+
+
+
+.flex-container a:active,
+
+
+
+
+
+
+
+.flexslider a:active {outline: none;}
+
+
+
+
+
+
+
+.slides,
+
+
+
+
+
+
+
+.flex-control-nav,
+
+
+
+
+
+
+
+.flex-direction-nav {margin: 0; padding: 0; list-style: none;} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FlexSlider Necessary Styles
+
+
+
+
+
+
+
+*********************************/ 
+
+
+
+
+
+
+
+.flexslider {width: 100%; margin: 0; padding: 0;}
+
+
+
+
+
+
+
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+
+
+
+
+
+
+
+.flexslider .slides :first-child { display:inline-block;}
+
+
+
+
+
+
+
+.flexslider .slides img{
+
+
+
+width:100%;
+
+
+
+}
+
+
+
+
+
+
+
+.flex-pauseplay span {text-transform: capitalize;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Clearfix for the .slides element */
+
+
+
+
+
+
+
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
+
+
+
+
+
+
+
+html[xmlns] .slides {display: block;} 
+
+
+
+
+
+
+
+* html .slides {height: 1%;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* No JavaScript Fallback */
+
+
+
+
+
+
+
+/* If you are not using another script, such as Modernizr, make sure you
+
+
+
+
+
+
+
+ * include js that eliminates this class on page load */
+
+
+
+
+
+
+
+.no-js .slides > li:first-child {display: block;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FlexSlider Default Theme
+
+
+
+
+
+
+
+*********************************/
+
+
+
+
+
+
+
+.flexslider { border: 1px solid #fff; position: relative; -webkit-border-radius: 5px; -moz-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; zoom: 1;}
+
+
+
+
+
+
+
+.flexslider .slides {zoom: 1;}
+
+
+
+
+
+
+
+.flexslider .slides > li {position: relative;}
+
+
+
+
+
+
+
+/* Suggested container for "Slide" animation setups. Can replace this with your own, if you wish */
+
+
+
+
+
+
+
+.flex-container {zoom: 1; position: relative;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Caption style */
+
+
+
+
+
+
+
+/* IE rgba() hack */
+
+
+
+
+
+
+
+.flex-caption {background:none; -ms-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000);
+
+
+
+
+
+
+
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4C000000,endColorstr=#4C000000); zoom: 1;}
+
+
+
+
+
+
+
+.flex-caption {width: 96%; padding: 2%; position: absolute; left: 0; bottom: 0; background: rgba(0,0,0,.5); color: #fff; text-shadow: 0 -1px 0 rgba(0,0,0,.3); font-size: 18px; line-height: 18px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Direction Nav */
+
+
+
+
+
+
+
+.flex-direction-nav li a {width: 106px; height: 90px; margin: 0; display: block; background: url('img/pizzaNav.png') no-repeat 0 0; position: absolute; top: 40%; cursor: pointer; text-indent: -9999px;}
+
+
+
+
+
+
+
+.flex-direction-nav li .next, .flex-direction-nav li .flex-next  {background-position: -90px 0; right: -50px; margin:0 0 0 0;}
+
+
+
+
+
+
+
+.flex-direction-nav li .prev, .flex-direction-nav li .flex-prev {left: -42px; background-position:17px 0;}
+
+
+
+
+
+
+
+.flex-direction-nav li .disabled {opacity: .3; filter:alpha(opacity=30); cursor: default;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Control Nav */
+
+
+
+
+
+
+
+.flex-control-nav {width: 100%; position: absolute; bottom: -30px; text-align: center;}
+
+
+
+
+
+
+
+.flex-control-nav li {margin: 0 0 0 5px; display: inline-block; zoom: 1; *display: inline;}
+
+
+
+
+
+
+
+.flex-control-nav li:first-child {margin: 0;}
+
+
+
+
+
+
+
+.flex-control-nav li a {width: 13px; height: 13px; display: block; background: url('img/bg_control_nav.png') no-repeat 0 0; cursor: pointer; text-indent: -9999px;}
+
+
+
+
+
+
+
+.flex-control-nav li a:hover {background-position: 0 -13px;}
+
+
+
+
+
+
+
+.flex-control-nav li a.active {background-position: 0 -26px; cursor: default;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Masonry Layout
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+.masonry #primary {
+
+  float: none;
+
+  padding: 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.masonry .hentry {
+
+  float: left;
+
+  width:33%;
+
+  margin-bottom:10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.masonry .hentry {
+
+  -webkit-transition: height, width 0.2s;
+
+  -moz-transition: height, width 0.2s;
+
+  -ms-transition: height, width 0.2s;
+
+  -o-transition: height, width 0.2s;
+
+  transition: height, width 0.2s;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.masonry .hentry img {
+
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.post-link {
+
+  float: right;
+
+}
+
+
+
+
+
+
+
+`
+
+
+
+
+
+
+
+/* =Content
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+.hentry {
+
+
+
+
+
+
+
+  margin: 0 0 20px 0;
+
+
+
+
+
+
+
+  border-radius: 3px;
+
+
+
+
+
+
+
+  background: #fff;
+
+
+
+
+
+
+
+  border: 1px solid #eeeeee;
+
+
+
+
+
+
+
+  overflow: hidden;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.entry-title {
+
+
+
+
+
+
+
+  font-size: 20px;
+
+
+
+
+
+
+
+  font-size: 2.0rem;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.entry-header {
+
+
+
+
+
+
+
+  padding: 10px 15px 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.entry-meta {
+
+
+
+
+
+
+
+  clear: both;
+
+
+
+
+
+
+
+  font-size: 13px;
+
+
+
+
+
+
+
+  font-size: 1.3rem;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.entry-content {
+
+
+
+
+
+
+
+  padding: 20px 15px 10px;
+
+
+
+
+
+
+
+  border-top: 1px solid #eeeeee;
+
+
+
+
+
+
+
+  border-bottom: 1px solid #eeeeee;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.entry-content h1,
+
+
+
+
+
+
+
+.entry-content h2,
+
+
+
+
+
+
+
+.entry-content h3,
+
+
+
+
+
+
+
+.entry-content h4,
+
+
+
+
+
+
+
+.entry-content h5,
+
+
+
+
+
+
+
+.entry-content h6 {
+
+
+
+
+
+
+
+  font-weight: 700;
+
+
+
+
+
+
+
+  margin-bottom: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.entry-content h1, .entry-content h2 {
+
+
+
+
+
+
+
+  font-size: 18px;
+
+
+
+
+
+
+
+  font-size: 1.8rem;
+
+
+
+
+
+
+
+  letter-spacing: 1px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.entry-content h3 {
+
+
+
+
+
+
+
+  font-size: 16px;
+
+
+
+
+
+
+
+  font-size: 1.6rem;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.entry-content h4, .entry-content h6 {
+
+
+
+
+
+
+
+  font-size: 15px;
+
+
+
+
+
+
+
+  font-size: 1.5rem;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer.entry-meta {
+
+
+
+
+
+
+
+  padding: 10px 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sticky {
+
+
+
+
+
+
+
+  /* Required for Theme Review */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Archives
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+.page-header {
+
+
+
+
+
+
+
+  padding: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page-header .page-title {
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+  font-size: 16px;
+
+
+
+
+
+
+
+  font-size: 1.6rem;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.taxonomy-description p {
+
+
+
+
+
+
+
+  margin: 5px 0 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =404/Search
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+.search-no-results .hentry {
+
+
+
+
+
+
+
+  float: none;
+
+
+
+
+
+
+
+  width: auto;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.error404 .entry-content #searchform {
+
+
+
+
+
+
+
+  margin-bottom: 20px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Post Navigation
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+#nav-below {
+
+
+
+
+
+
+
+  clear: both;
+
+
+
+
+
+
+
+  margin-bottom: 30px;
+
+
+
+
+
+
+
+  border: 1px solid #e5e5e5;
+
+
+
+
+
+
+
+  border-radius: 3px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#nav-below .nav-previous a, #nav-below .nav-next a {
+
+
+
+
+
+
+
+  padding: 10px 15px;
+
+
+
+
+
+
+
+  float: left;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#nav-below .nav-next a {
+
+
+
+
+
+
+
+  float: right;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page-links {
+
+
+
+
+
+
+
+  clear: both;
+
+
+
+
+
+
+
+  padding: 10px 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.page-links a {
+
+
+
+
+
+
+
+  display: inline-block;
+
+
+
+
+
+
+
+  padding: 4px 10px;
+
+
+
+
+
+
+
+  margin: 0 5px;
+
+
+
+
+
+
+
+  background: #f5f5f5;
+
+
+
+
+
+
+
+  border-radius: 3px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Asides
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+.footer-widget aside {
+
+     display:inline;
+
+}
+
+
+
+li .page_item {
+
+     float:left;
+
+     padding-right: 1em;
+
+}
+
+
+
+#secondary .widget {
+
+
+
+
+
+
+
+  margin: 0 0 20px 0;
+
+
+
+
+
+
+
+  border-radius: 3px;
+
+
+
+
+
+
+
+  background: #fff;
+
+
+
+
+
+
+
+  overflow: hidden;
+
+
+
+
+
+
+
+  font-size: 13px;
+
+
+
+
+
+
+
+  font-size: 1.3rem;
+
+
+
+
+
+
+
+  border: 1px solid #eeeeee;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#secondary .widget-title {
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  font-size: 16px;
+
+
+
+
+
+
+
+  margin-bottom: 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#secondary .widget-title:after {
+
+
+
+
+
+
+
+  content: '';
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#secondary .widget-title span {
+
+
+
+
+
+
+
+  padding: 6px 20px;
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#secondary ul {
+
+
+
+
+
+
+
+  list-style: none;
+
+
+
+
+
+
+
+  margin: 0 20px 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#secondary p {
+
+
+
+
+
+
+
+  margin: 0 20px 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.widget_search {
+
+
+
+
+
+
+
+  padding: 20px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.widget_search input[type="submit"] {
+
+
+
+
+
+
+
+  padding: 3px 12px 4px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.widget_search input[type="submit"]:active {
+
+
+
+
+
+
+
+  margin-top: -1px;
+
+
+
+
+
+
+
+  padding: 4px 12px 3px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Make sure select elements fit in widgets */
+
+
+
+
+
+
+
+.widget select {
+
+
+
+
+
+
+
+  max-width: 100%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Media
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+.site-header img,
+
+
+
+
+
+
+
+.hentry img,
+
+
+
+
+
+
+
+.comment-content img,
+
+
+
+
+
+
+
+.widget img {
+
+
+
+
+
+
+
+  max-width: 100%;
+
+
+
+
+
+
+
+  /* Fluid images for posts, comments, and widgets */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-header img,
+
+
+
+
+
+
+
+.hentry img,
+
+
+
+
+
+
+
+.comment-content img[height],
+
+
+
+
+
+
+
+img[class*="align"],
+
+
+
+
+
+
+
+img[class*="wp-image-"] {
+
+
+
+
+
+
+
+  height: auto;
+
+
+
+
+
+
+
+  /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-header img,
+
+
+
+
+
+
+
+.hentry img,
+
+
+
+
+
+
+
+img.size-full {
+
+
+
+
+
+
+
+  max-width: 100%;
+
+
+
+
+
+
+
+  width: auto;
+
+
+
+
+
+
+
+  /* Prevent stretching of full-size images with height and width attributes in IE8 */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.entry-content img.wp-smiley,
+
+
+
+
+
+
+
+.comment-content img.wp-smiley {
+
+
+
+
+
+
+
+  border: none;
+
+
+
+
+
+
+
+  margin-bottom: 0;
+
+
+
+
+
+
+
+  margin-top: 0;
+
+
+
+
+
+
+
+  padding: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wp-caption {
+
+
+
+
+
+
+
+  background: #f9f9f9;
+
+
+
+
+
+
+
+  border: 1px solid #eeeeee;
+
+
+
+
+
+
+
+  margin-bottom: 15px;
+
+
+
+
+
+
+
+  max-width: 100%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wp-caption img[class*="wp-image-"] {
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  margin: 1.2% auto 0;
+
+
+
+
+
+
+
+  max-width: 98%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wp-caption-text {
+
+
+
+
+
+
+
+  text-align: center;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wp-caption .wp-caption-text {
+
+
+
+
+
+
+
+  margin: 5px 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-content .gallery {
+
+
+
+
+
+
+
+  margin-bottom: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.gallery-caption {
+
+
+
+
+
+
+
+  font-size: 13px;
+
+
+
+
+
+
+
+  font-size: 1.3rem;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-content .gallery a img {
+
+
+
+
+
+
+
+  border: none;
+
+
+
+
+
+
+
+  height: auto;
+
+
+
+
+
+
+
+  max-width: 90%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.site-content .gallery dd {
+
+
+
+
+
+
+
+  margin: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Make sure embeds and iframes fit their containers */
+
+
+
+
+
+
+
+embed,
+
+
+
+
+
+
+
+iframe,
+
+
+
+
+
+
+
+object {
+
+
+
+
+
+
+
+  max-width: 100%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Comments
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+#comments {
+
+
+
+
+
+
+
+  border: 1px solid #e5e5e5;
+
+
+
+
+
+
+
+  border-radius: 3px;
+
+
+
+
+
+
+
+  margin-bottom: 20px;
+
+
+
+
+
+
+
+  padding: 15px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#comments .comment-meta a {
+
+
+
+
+
+
+
+  text-decoration: none;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bypostauthor {
+
+
+
+
+
+
+
+  /* Required for Theme Review */
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.comments-title, .nocomments, #reply-title {
+
+
+
+
+
+
+
+  font-size: 15px;
+
+
+
+
+
+
+
+  font-size: 1.5rem;
+
+
+
+
+
+
+
+  margin: 0 0 15px 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.commentlist {
+
+
+
+
+
+
+
+  list-style: none;
+
+
+
+
+
+
+
+  margin: 0 0 10px 0;
+
+
+
+
+
+
+
+  padding: 0 0 10px 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.commentlist:after {
+
+
+
+
+
+
+
+  content: '';
+
+
+
+
+
+
+
+  width: 100%;
+
+
+
+
+
+
+
+  height: 1px;
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  margin-top: 20px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+li.comment {
+
+
+
+
+
+
+
+  list-style: none;
+
+
+
+
+
+
+
+  margin: 0 0 15px;
+
+
+
+
+
+
+
+  position: relative;
+
+
+
+
+
+
+
+  padding-left: 75px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+article.comment {
+
+
+
+
+
+
+
+  background: #fff;
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  border-radius: 3px;
+
+
+
+
+
+
+
+  padding: 10px;
+
+
+
+
+
+
+
+  overflow: hidden;
+
+
+
+
+
+
+
+  font-size: 14px;
+
+
+
+
+
+
+
+  font-size: 1.4rem;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.commentlist .pingback {
+
+
+
+
+
+
+
+  margin: 0 0 5px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.commentlist .children {
+
+
+
+
+
+
+
+  margin: 10px 0 0 0;
+
+
+
+
+
+
+
+  padding: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.commentlist .avatar {
+
+
+
+
+
+
+
+  position: absolute;
+
+
+
+
+
+
+
+  top: 0;
+
+
+
+
+
+
+
+  left: 0;
+
+
+
+
+
+
+
+  padding: 0;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.comment-author cite {
+
+
+
+
+
+
+
+  font-style: normal;
+
+
+
+
+
+
+
+  font-weight: bold;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.comment-meta {
+
+
+
+
+
+
+
+  font-size: 12px;
+
+
+
+
+
+
+
+  font-size: 1.2rem;
+
+
+
+
+
+
+
+  margin-bottom: 5px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#respond p {
+
+
+
+
+
+
+
+  margin-bottom: 10px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#respond .form-allowed-tags {
+
+
+
+
+
+
+
+  margin-bottom: 30px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#respond .form-allowed-tags code {
+
+
+
+
+
+
+
+  font-size: 12px;
+
+
+
+
+
+
+
+  font-size: 1.2rem;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#respond input[type=text] {
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  width: 60%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#respond textarea {
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+  margin: 10px 0;
+
+
+
+
+
+
+
+  padding: 5px;
+
+
+
+
+
+
+
+  width: 90%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#respond .form-allowed-tags {
+
+
+
+
+
+
+
+  clear: both;
+
+
+
+
+
+
+
+  width: 90%;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#respond .form-allowed-tags code {
+
+
+
+
+
+
+
+  display: block;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#commentform label[for="author"], #commentform label[for="email"], #commentform label[for="url"] {
+
+
+
+
+
+
+
+  float: left;
+
+
+
+
+
+
+
+  padding: 5px 0;
+
+
+
+
+
+
+
+  width: 100px;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Footer
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+#colophon {
+
+  display: block;
+
+  padding: 15px 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =Responsive
+
+
+
+
+
+
+
+----------------------------------------------- */
+
+
+
+
+
+
+
+@media screen and (max-width: 790px) {
+
+
+
+
+
+
+
+ #banner {
+
+
+
+ width:100%;
+
+
+
+ }
+
+
+
+ 
+
+
+
+ #logo {
+
+
+
+ display:none;
+
+
+
+ 
+
+
+
+ }
+
+
+
+ 
+
+
+
+ 
+
+
+
+  #masthead .section {
+
+
+
+
+
+
+
+    padding: 0;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #masthead hgroup {
+
+
+
+
+
+
+
+    padding-left: 20px;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .main-navigation {
+
+
+
+
+
+
+
+    clear: both;
+
+
+
+
+
+
+
+    float: none;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .main-navigation li:first-child a {
+
+
+
+
+
+
+
+    padding-left: 20px;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .main-navigation a {
+
+
+
+
+
+
+
+    padding: 18px 14px;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .main-navigation ul ul {
+
+
+
+
+
+
+
+    top: 53px;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .masonry .hentry {
+
+
+
+
+
+
+
+    width: 48%;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .search-no-results .hentry {
+
+
+
+
+
+
+
+    float: none;
+
+
+
+
+
+
+
+    width: auto;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #primary {
+
+    float: none;
+
+    padding: 0;
+
+    width:100%;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #secondary {
+
+
+
+
+
+
+
+    float: none;
+
+
+
+
+
+
+
+    width: auto;
+
+
+
+
+
+
+
+    margin: 0 0 40px;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+  #index-secondary {
+
+
+
+
+
+
+
+   width: 100%;
+
+
+
+
+
+
+
+  } 
+
+
+
+
+
+
+
+  #index-right {
+
+
+
+
+
+
+
+   position:relative;
+
+
+
+
+
+
+
+  } 
+
+
+
+
+
+
+
+
+
+
+
+	#photo-rotator {
+
+
+
+	max-width:100%;
+
+
+
+	}
+
+
+
+	
+
+
+
+	#chosen-shows {
+
+
+
+	max-width:100%;
+
+
+
+	}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 490px) {
+
+
+
+
+
+
+
+  .menu-toggle {
+
+
+
+
+
+
+
+    top: 0;
+
+
+
+
+
+
+
+    right: 0;
+
+
+
+
+
+
+
+    box-shadow: 0;
+
+
+
+
+
+
+
+    clip: auto;
+
+
+
+
+
+
+
+    display: block;
+
+
+
+
+
+
+
+    padding: 0;
+
+
+
+
+
+
+
+    margin: 0;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .menu-toggle a {
+
+
+
+
+
+
+
+    padding: 16px 20px 17px;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .menu-toggle a:hover {
+
+
+
+
+
+
+
+    background: #e9e9e9;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .main-navigation .menu {
+
+
+
+
+
+
+
+    border-top: 1px solid #f9f9f9;
+
+
+
+
+
+
+
+    display: none;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .masonry .hentry {
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+  #index-secondary {
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+  }  
+
+
+
+
+
+
+
+ #primary {
+
+
+
+
+
+
+
+    width: 100%;
+
+
+
+
+
+
+
+  }  
+
+
+
+
+
+
+
+  #index-right {
+
+
+
+
+
+
+
+   position:relative;
+
+
+
+
+
+
+
+  } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+.gform_wrapper .chzn-container .chzn-results .active-result {
+
+color:black;
+
+}
+
+
+
+
+
+
+
+.tribe-events-othermonth {
+
+background: none;
+
+}
+
+
+
+#tribe-bar-form {
+
+background: none;
+
+}
+
+.tribe-bar-views-inner {
+
+background: none;
+
+}
+
+
+
+.tribe-events-calendar div[id*="tribe-events-daynum-"], .tribe-events-calendar div[id*="tribe-events-daynum-"] a {
+
+background: black;
+
+}
+
+
+
+.tribe-events-calendar td.tribe-events-past div[id*="tribe-events-daynum-"], .tribe-events-calendar td.tribe-events-past div[id*="tribe-events-daynum-"]>a {
+
+background: black;
+
+}
+
+
+
+.events-archive.events-gridview #tribe-events-content table .vevent {
+
+width:80%;
+
+}
+
+
+
+.events-archive.events-gridview #tribe-events-content table .tribe-events-last {
+
+width:80%;
+
+}
+
+
+
+.calendar-list{
+
+font-size: 20px;
+
+margin-left: 20px;
+
+text-decoration: none;
+
+}
+
+
+
+.sf-menu a {
+
+color: #cf2e52 !important;
+
+}
+
+
+
+.sf-menu a:hover {
+
+color: white !important;
+
+}
+
+
+
+h2.tribe-events-page-title a {
+
+color:inherit;
+
+}
+
+
+
+h2.tribe-events-page-title a:hover, h2.tribe-events-page-title a:focus {
+
+color:inherit;
+
+}
+
+
+
+.tribe-events-list-widget ol li {
+
+width: 100% !important;
+
+margin-left: -40px !important;
+
+padding: 10px;
+
+}
+
+
+
+
+
+.single-tribe_events .tribe-events-event-meta {
+
+background:inherit;
+
+}
+
+
+
+.tribe-events-adv-list-widget ol li {
+
+width:100% !important;
+
+padding:10px;
+
+}
+
+
+
+.tribe-events-adv-list-widget ol li h4{
+
+font-size:1.5 em;
+
+}
+
+
+
+
+
+.vcalendar{
+
+display: inline-block;
+
+margin:0;
+
+}
+
+
+
+.tribe-events-list-separator-month:after {
+
+display:none;
+
+}
+
+
+
+.tribe-events-list-separator-month span {
+
+background:inherit;
+
+}
+
+
+
+.events-list #tribe-events-footer {
+
+clear:both;
+
+}
+
+
+
+.type-tribe_events{
+
+width: 100% !important;
+
+}
+
+
+
+.tribe-events-list-event-description .tribe-events-content .description entry-summary .st_fblike_hcount {
+
+display:none;
+
+}
+
+.tribe-events-list-event-description .tribe-events-content .description entry-summary .st_sharethis_hcount {
+
+display:none;
+
+}
+
+.tribe-events-list-event-description .tribe-events-content .description entry-summary .stArrow{
+
+display:none;
+
+}
+
+/*
+
+.event-static{
+  width: 670px;
+  height: 110px;
+  background-color: #292933;
+  border-bottom: 5px solid #1d1d1d;
+}
+
+.date-module{
+  width: 110px;
+  border-right: 5px solid #fff;
+}
+
+
+*/
+
+a .event-static{
+  color: #fff;
+  -webkit-transition: color  ease-out .2s;
+  -moz-transition: color  ease-out .2s;
+  -o-transition: color  ease-out .2s;
+  transition: color  ease-out .2s;
+}
+
+.event-static{
+  position: relative;
+  width: 765px;
+  clear: both;
+  padding-top: 20px;
+}
+
+.date-module{
+  width: 110px;
+  height: 110px;
+  background-color: #292933;
+  border-bottom: 5px solid #1d1d1d;
+  float: left;
+}
+
+.art .date-module, .art .event-content{
+  border-bottom: 5px solid #ff43de;
+}
+
+.film .date-module, .film .event-content{
+  border-bottom: 5px solid #ff2f47;
+}
+
+.date-module p{
+  position: relative;
+  top: 30px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.event-content{
+  margin-left: 5px;
+  float: left;
+  width: 650px;
+  min-height: 110px;
+  background-color: #292933;
+  border-bottom: 5px solid #1d1d1d;
+
+}
+
+.event-content h3{
+  padding: 10px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.event-content time{
+  font-style: oblique;
+  display: block;
+  float: left;
+  padding-left: 10px;
+  position: absolute;
+  top: 100px;
+}
+
+.event-content ul{
+  float: right;
+  position: absolute;
+  top: 100px;
+  right: 10px;
+}
+
+.event-content li{
+  float: left;
+  list-style: none;
+  padding-right: 20px;
+}
+
+.location{
+  font-style: oblique;
+}
+
+.price{
+  font-weight: 600;
+  font-size: 18px;
+  position: relative;
+  top: -2px;
+}
+
+
+
+
+a .event-static:hover{
+  color: #fa3752;
+}
+
+.sort li{
+  float: left;
+  padding-left: 20px;
+  list-style: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  -webkit-transition: color  ease-out .2s;
+  -moz-transition: color  ease-out .2s;
+  -o-transition: color  ease-out .2s;
+  transition: color  ease-out .2s;
+  padding-bottom: 20px;
+}
+
+.artBtn:hover{
+  color: #ff43de;
+}
+
+.musicBtn:hover{
+  color: #1d1d1d;
+}
+
+.filmBtn:hover{
+  color: #ff2f47;
+}
+
+.boxStatic{
+  display: block;
+  width: 90%;
+  height: 270px;
+  margin: 0 auto;
+  background-color: 
+}
+
+.boxStatic h1{
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 40px;
+  font-size: 25px;
+   text-shadow: 1px 1px #292933, 
+                2px 2px #292933, 
+                3px 3px #292933,
+                4px 4px #292933, 
+                5px 5px #292933, 
+                6px 6px #292933,
+                7px 7px #292933, 
+                8px 8px #292933, 
+                9px 9px #292933;
+
+}
+
+#chosen-shows{
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.tonight{
+  clear: both;
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+.tonight h1{
+  text-transform: uppercase;
+  padding-left: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  padding-top: 30px;
+}
+
+.tonight .date-module{
+  display: none;
+}
+
+.tonight .event-content{
+  width: 765px
+}
+
+#content-placeholder{
+  margin-top: 100px;
+  clear: both;
+}
+
+
+@media screen and (max-width: 740px) {
+
+.tonight .event-content{
+  width: 90%;
+}
+
+  .event-static{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .date-module, .event-content {
+    width: 90%;
+    border: 0px solid #fff;
+    text-align: left;
+    padding: 20px;
+    margin: 0px;
+
+  }
+
+  .date-module{
+    border-top: 5px solid #1d1d1d;
+    height: 10px;
+  }
+
+ .date-module{
+    border-top: 5px solid #1d1d1d;
+    height: 10px;
+  }
+
+  .film .date-module{
+    border-top: 5px solid  #ff2f47;
+  }
+
+  .art .date-module{
+    border-top: 5px solid #ff43de;
+  }
+
+  .film .date-module, .film .event-content{
+  border-bottom: 0px solid #ff2f47;
+}
+
+  .art .date-module, .art .event-content{
+  border-bottom: 0px solid #ff2f47;
+}
+
+
+
+  .event-content h3{
+    padding: 0px;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .date-module p{
+    font-size: 20px !important;
+    float: left;
+    padding-right: 20px;
+  }
+
+    .event-content time{
+    font-style: oblique;
+    display: block;
+    float: left;
+    padding-left: 0px;
+    position: relative;
+    top: 0px;
+    float: none !important;
+
+    }
+
+
+  .event-content ul{
+    margin: 0px;
+    float: none;
+    position: relative;
+    top: 0px;
+    right: 0px;
+  }
+
+  .event-content li{
+    font-size: 18px;
+    float: none;
+    list-style: none;
+    padding-right: 20px;
+    padding-top: 10px;
+  }
+
+  .date-module p{
+    position: relative;
+    top: 10px;
+    text-align: center;
+    font-size: 30px;
+    line-height: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+}
+
+
+/* =Comics!
+------------------*/
+
+.comic h1{
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.comic-creds{
+	text-align: center;
+	margin-bottom: .5em;
+}
+
+.comic-image{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 80%;
+	margin: 0 auto;	
+}
+
+.comic-image img{width: 100%; height: auto;}
+
+.single-comic .comic-image{float: left;}
+
+.previous-comic-link{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 10%; float: left;
+	text-align: center;
+}
+
+.next-comic-link{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 10%; float: left;
+	text-align: center;
+}
+
+.previous-comic-link a, .next-comic-link a{text-decoration: none;}
+
+.comic-meta{font-size: .8em; font-style: italic;}
+
+.comic article{border-bottom: 1px solid #eee; padding: 1em 0;}
+
+#comic-author-information{
+-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+width: 40%;
+float: left;	
+}
+
+#authors-comics{
+-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 60%; float: right;
+}
