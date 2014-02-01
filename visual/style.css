@@ -12771,7 +12771,7 @@ a .event-static:hover{
 }
 
 .boxStatic{
-  display: block;
+  display: inline-block;
   width: 90%;
   height: 270px;
   margin: 0 auto;
@@ -12783,7 +12783,7 @@ a .event-static:hover{
   color: #fff;
   font-weight: 700;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 10px;
   font-size: 25px;
    text-shadow: 1px 1px #292933, 
                 2px 2px #292933, 

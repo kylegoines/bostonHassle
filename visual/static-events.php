@@ -31,7 +31,7 @@ get_header(); ?>
 				<script id="some-template" type="text/x-handlebars-template">
 
 					{{#events}}
-						<a class="{{cat}}" href="{{url}}">
+						<a href="{{url}}" class="{{cat}}" >
 							<div class="event-static">
 								<div class="date-module">
 									<p class="monthName">{{month}}</p>
