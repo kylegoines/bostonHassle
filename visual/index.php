@@ -94,7 +94,7 @@ $currentDate = time();
 
 $args = array(
 
-	'post_type' => array('post', 'art', 'film'),
+	'post_type' => array('post', 'art', 'film', 'comic'),
 
 	'posts_per_page' => 6,
 
@@ -130,7 +130,7 @@ if (! $my_query->have_posts()) {
 
 	$args = array(
 
-		'post_type' => array('post', 'art', 'film'),
+		'post_type' => array('post', 'art', 'film', 'comic'),
 
 		'posts_per_page' => 6,
 

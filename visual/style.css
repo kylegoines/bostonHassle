@@ -5883,49 +5883,55 @@ float: left;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-#social {
-
-clear: both;
-
-display:block;
-
+/*SOCIAL LINKS */
+ul.home-social {
+display: inline-block;
 float: right;
-
-margin: 1em 1em 0 0;
-
-padding: 0px 10px 10px 10px;
-
-position: relative;
-
-width: 140px;
-
+margin-bottom: 8px;
 }
 
-
-
-
-
-#social img{
-
-margin-left:10px;
-
-width:40px;
-
+ul.home-social li {
+ list-style: none;
+display: block;
+float: left;
+margin-left: 10px; 
 }
 
+ul.home-social li:first-child {
+margin-left: 0;
+}
 
+ul.home-social li a {
+display: block;
+height: 70px;
+width: 70px;
+background: url("http://www.bostonhassle.com/images/2014/02/social_icons-02.png") no-repeat center 0
+}
 
+ul.home-social li a.instagram {
+ background-position: 0 0;
+  
+}
+
+ul.home-social li a.rss {
+background-position: -120px 0 ;
+}
+
+ul.home-social li a.mailinglist {
+background-position: -235px 0;
+}
+
+ul.home-social li a.gplus {
+background-position: -350px 0;
+}
+
+ul.home-social li a.twitter {
+background-position: -468px 0;
+}
+
+ul.home-social li a.facebook {
+background-position: -582px 0;
+}
 
 
 #search-main {
@@ -12771,7 +12777,7 @@ a .event-static:hover{
 }
 
 .boxStatic{
-  display: inline-block;
+  display: block;
   width: 90%;
   height: 270px;
   margin: 0 auto;
@@ -12783,7 +12789,7 @@ a .event-static:hover{
   color: #fff;
   font-weight: 700;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 40px;
   font-size: 25px;
    text-shadow: 1px 1px #292933, 
                 2px 2px #292933, 
@@ -12830,6 +12836,53 @@ a .event-static:hover{
   margin-top: 100px;
   clear: both;
 }
+
+
+
+
+/*
+this is for the events page V2
+
+*/
+
+.eventListing{
+  color: white !important;
+  font-size: 18px;
+  display: block;
+  margin-top: 30px;
+  transition: all .5s;
+  -webkit-transition: all .5s; /* Safari */
+}
+
+.eventListing p{
+  padding: 0;
+  margin: 0;
+}
+
+.eventListing:hover{
+  color: #cf2e52 !important;
+  text-decoration: underline;
+}
+
+.eventTitle{
+  display: block;
+  padding-top: 40px;
+  font-size: 34px !important;
+}
+
+.eventTitle:first-of-type{
+  padding-top: 0px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 740px) {
@@ -12933,65 +12986,3 @@ a .event-static:hover{
 }
 
 
-/* =Comics!
-------------------*/
-
-.comic h1{
-	font-size: 2em;
-	font-weight: bold;
-	text-align: center;
-}
-
-.comic-creds{
-	text-align: center;
-	margin-bottom: .5em;
-}
-
-.comic-image{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	width: 80%;
-	margin: 0 auto;	
-}
-
-.comic-image img{width: 100%; height: auto;}
-
-.single-comic .comic-image{float: left;}
-
-.previous-comic-link{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	width: 10%; float: left;
-	text-align: center;
-}
-
-.next-comic-link{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	width: 10%; float: left;
-	text-align: center;
-}
-
-.previous-comic-link a, .next-comic-link a{text-decoration: none;}
-
-.comic-meta{font-size: .8em; font-style: italic;}
-
-.comic article{border-bottom: 1px solid #eee; padding: 1em 0;}
-
-#comic-author-information{
--webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-width: 40%;
-float: left;	
-}
-
-#authors-comics{
--webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-	width: 60%; float: right;
-}
